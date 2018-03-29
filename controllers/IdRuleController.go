@@ -1,12 +1,13 @@
 package controllers
 
 import (
-	"github.com/aaa59891/mosi_demo_go/constants"
-	"github.com/aaa59891/mosi_demo_go/db"
-	"github.com/aaa59891/mosi_demo_go/models"
 	"fmt"
-	"github.com/gin-gonic/gin"
 	"net/http"
+
+	"github.com/aaa59891/go_demo_fullstack/constants"
+	"github.com/aaa59891/go_demo_fullstack/db"
+	"github.com/aaa59891/go_demo_fullstack/models"
+	"github.com/gin-gonic/gin"
 )
 
 var backUrlMap = map[int]string{

@@ -1,8 +1,8 @@
 package models
 
 import (
-	"github.com/aaa59891/mosi_demo_go/constants"
-	"github.com/aaa59891/mosi_demo_go/db"
+	"github.com/aaa59891/go_demo_fullstack/constants"
+	"github.com/aaa59891/go_demo_fullstack/db"
 	"github.com/fatih/structs"
 	"github.com/jinzhu/gorm"
 	"strings"

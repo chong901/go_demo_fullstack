@@ -4,8 +4,8 @@ import (
 	"encoding/gob"
 	"log"
 
-	"github.com/aaa59891/mosi_demo_go/db"
-	"github.com/aaa59891/mosi_demo_go/models"
+	"github.com/aaa59891/go_demo_fullstack/db"
+	"github.com/aaa59891/go_demo_fullstack/models"
 	"github.com/googollee/go-socket.io"
 )
 

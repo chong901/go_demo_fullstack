@@ -1,12 +1,13 @@
 package db
 
 import (
-	"github.com/aaa59891/mosi_demo_go/configs"
 	"fmt"
-	"github.com/jinzhu/gorm"
-	_ "github.com/jinzhu/gorm/dialects/mysql"
 	"log"
 	"os"
+
+	"github.com/aaa59891/go_demo_fullstack/configs"
+	"github.com/jinzhu/gorm"
+	_ "github.com/jinzhu/gorm/dialects/mysql"
 )
 
 var DB *gorm.DB

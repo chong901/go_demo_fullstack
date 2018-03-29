@@ -1,14 +1,15 @@
 package controllers
 
 import (
-	"github.com/aaa59891/mosi_demo_go/constants"
-	"github.com/aaa59891/mosi_demo_go/db"
-	"github.com/aaa59891/mosi_demo_go/models"
+	"net/http"
+
+	"github.com/aaa59891/go_demo_fullstack/constants"
+	"github.com/aaa59891/go_demo_fullstack/db"
+	"github.com/aaa59891/go_demo_fullstack/models"
 	"github.com/gin-contrib/sessions"
 	"github.com/gin-gonic/gin"
 	"github.com/jinzhu/gorm"
 	"golang.org/x/crypto/bcrypt"
-	"net/http"
 )
 
 func GetAccountsView(c *gin.Context) {

@@ -1,10 +1,11 @@
 package configs
 
 import (
-	"github.com/aaa59891/mosi_demo_go/utils"
-	"github.com/spf13/viper"
 	"os"
 	"path"
+
+	"github.com/aaa59891/go_demo_fullstack/utils"
+	"github.com/spf13/viper"
 )
 
 type config struct {

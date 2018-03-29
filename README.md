@@ -5,12 +5,12 @@ This README would normally document whatever steps are necessary to get your app
 ### How do I get set up? ###
  - use **go get**
     
-   >$ go get github.com/aaa59891/mosi_demo_go
+   >$ go get github.com/aaa59891/go_demo_fullstack
     
  - use **git clone & govendor**
    
-   >$ git clone https://github.com/aaa59891/mosi_demo_go.git  
-   >$ cd mosi_demo_go  
+   >$ git clone https://github.com/aaa59891/go_demo_fullstack.git  
+   >$ cd go_demo_fullstack  
    >$ govendor sync
    
 ### Configuration setting: ###

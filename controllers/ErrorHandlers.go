@@ -1,9 +1,10 @@
 package controllers
 
 import (
-	"github.com/aaa59891/mosi_demo_go/constants"
-	"github.com/gin-gonic/gin"
 	"net/http"
+
+	"github.com/aaa59891/go_demo_fullstack/constants"
+	"github.com/gin-gonic/gin"
 )
 
 func ErrorHandler404(c *gin.Context) {

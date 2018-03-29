@@ -3,7 +3,7 @@ package controllers
 import (
 	"net/http"
 
-	"github.com/aaa59891/mosi_demo_go/constants"
+	"github.com/aaa59891/go_demo_fullstack/constants"
 	"github.com/gin-contrib/sessions"
 	"github.com/gin-gonic/gin"
 )

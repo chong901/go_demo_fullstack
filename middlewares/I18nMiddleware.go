@@ -1,8 +1,8 @@
 package middlewares
 
 import (
-	"github.com/aaa59891/mosi_demo_go/constants"
-	"github.com/aaa59891/mosi_demo_go/controllers"
+	"github.com/aaa59891/go_demo_fullstack/constants"
+	"github.com/aaa59891/go_demo_fullstack/controllers"
 	"github.com/gin-gonic/gin"
 )
 

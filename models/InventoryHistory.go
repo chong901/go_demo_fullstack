@@ -1,7 +1,7 @@
 package models
 
 import (
-	"github.com/aaa59891/mosi_demo_go/constants"
+	"github.com/aaa59891/go_demo_fullstack/constants"
 	"errors"
 	"github.com/jinzhu/gorm"
 	"time"

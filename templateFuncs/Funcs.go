@@ -1,9 +1,9 @@
 package templateFuncs
 
 import (
-	"github.com/aaa59891/mosi_demo_go/constants"
-	"github.com/aaa59891/mosi_demo_go/controllers/pagination"
-	"github.com/aaa59891/mosi_demo_go/models"
+	"github.com/aaa59891/go_demo_fullstack/constants"
+	"github.com/aaa59891/go_demo_fullstack/controllers/pagination"
+	"github.com/aaa59891/go_demo_fullstack/models"
 	"github.com/nicksnyder/go-i18n/i18n"
 	"reflect"
 	"time"

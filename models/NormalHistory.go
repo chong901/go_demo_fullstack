@@ -1,7 +1,7 @@
 package models
 
 import (
-	"github.com/aaa59891/mosi_demo_go/utils"
+	"github.com/aaa59891/go_demo_fullstack/utils"
 	"database/sql/driver"
 	"encoding/json"
 	"errors"

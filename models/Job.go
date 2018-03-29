@@ -4,7 +4,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/aaa59891/mosi_demo_go/db"
+	"github.com/aaa59891/go_demo_fullstack/db"
 	"github.com/jinzhu/gorm"
 )
 
