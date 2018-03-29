@@ -124,5 +124,5 @@ $ GOOS=windows GOARCH=386 ./build
 ```
 
 Then you can find your deployment files in export/*ProjectName*/
-Just move this folder to the machine and run the binary file!
+Just move this folder to the machine and run the binary file with the correct env variable!
 
