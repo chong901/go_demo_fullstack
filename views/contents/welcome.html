@@ -1,0 +1,35 @@
+{{template "header" .}}
+<!--
+<style>
+    #divWelcome {
+        width: 100%;
+        position: absolute;
+        top: 40%;
+    }
+</style>
+-->
+<link rel="STYLESHEET" type="text/css" href="/static/css/welcome.css?{{template "version"}}">
+<script src="/static/js/socket-io-1.3.7.js"></script>
+<script src="/static/js/welcome.js?{{template "version"}}"></script>
+
+<div class="container">
+    <div class="row" id="fulfillmentSummary">
+        <h3>{{translate "tFulfillmentSummary" .lang}}</h3>
+        <div id="progressSummary"></div>
+    </div>
+    <div class="row" id="machineSummary">
+        <h3>{{translate "tMachineStatus" .lang}}</h3>
+        <div id="machineTiles"></div>
+    </div>
+</div>
+<div class="hid">
+    <span id="strAddJob">{{translate "tAddJob" .lang}}</span>
+    <span id="strAddMachine">{{translate "tAddMachine" .lang}}</span>
+    <span id="strCurrent">{{translate "tCurrent" .lang}}</span>
+    <span id="strPlan">{{translate "tPlan" .lang}}</span>
+    <span id="strJob">{{translate "tJob" .lang}}</span>
+    <span id="strStatus">{{translate "tStatus" .lang}}</span>
+    <span id="strNoJob">{{translate "tNoJob" .lang}}</span>
+    <span id="strRemaining">{{translate "tRemaining" .lang}}</span>
+</div>
+{{template "footer"}}

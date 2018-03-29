@@ -1,0 +1,58 @@
+{{template "header" .}}
+<script src="/static/js/socket-io-1.3.7.js"></script>
+<script src="/static/js/inventory.js?{{template "version"}}"></script>
+<script>
+    btnId = 'navBtnInventory';
+</script>
+<div class="dataDiv">
+    <div class="divFilterForm">
+        <form id="filterForm" class="form-inline">
+            <div class="form-group">
+                <input id="skuId" name="skuId" class="form-control" type="text" placeholder="{{translate "tPartNo" .lang}}" value="{{.filter.SkuId}}">
+                {{template "filterButtons" .}}
+            </div>
+        </form>
+    </div>
+    <table id="dataTable" class="table" align="center">
+        <thead>
+        <tr>
+            <th>{{translate "tPartNo" .lang}}</th>
+            <th>{{translate "tInventoryLevel" .lang}}</th>
+            <th>{{translate "tEditor" .lang}}</th>
+            <th>{{translate "tLastEdit" .lang}}</th>
+            <th></th>
+        </tr>
+        </thead>
+        {{if .data}}
+        {{range .data}}
+        <tr>
+            <td data-skuId="{{.SkuId}}">{{.SkuId}}</td>
+            <td class="level">{{.Level}}</td>
+            <td class="user">{{.User}}</td>
+            <td class="updatedAt">{{dateTime24 .UpdatedAt}}</td>
+            <td>
+                <input type="button" class="btn btn-primary btnUpdate" value="{{translate "tStock" $.lang}}"
+                       onclick="updateBySku(this, '{{.Id}}', 1)">
+                <input type="button" class="btn btn-primary btnUpdate" value="{{translate "tWithdraw" $.lang}}"
+                       onclick="updateBySku(this, '{{.Id}}', 0)">
+                <input type="button" class="btn btn-default" value="{{translate "tHistory" $.lang}}"
+                       onclick="redirect('/inventory/history?id={{.Id}}')">
+            </td>
+        </tr>
+        {{end}}
+        {{else}}
+        <tr id="emptyTr">
+            <td class="text-center emptyTd"><h2>{{translate "tNoData" .lang}}</h2></td>
+        </tr>
+        {{end}}
+    </table>
+    {{if .data}}
+         {{template "pagination" .}}
+    {{end}}
+</div>
+<div class="hid">
+    <span id="strWithdraw">{{translate "tWithdraw" .lang}}</span>
+    <span id="strStock">{{translate "tStock" .lang}}</span>
+    <span id="strQuantity">{{translate "tQuantity" .lang}}</span>
+</div>
+{{template "footer"}}

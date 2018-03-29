@@ -1,0 +1,15 @@
+.condKey{
+  width: 20%;
+}
+
+.condVal{
+  width: 20%;
+}
+
+.condBtnRm{
+  vertical-align: unset;
+}
+
+#condTable span{
+  padding: 5px 5px 5px 0px;
+}

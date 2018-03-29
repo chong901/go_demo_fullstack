@@ -1,0 +1,62 @@
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    margin: 0 auto !important;
+    padding-top: 50px !important;
+    padding-bottom: 0px !important;
+}
+
+.sidebar:hover, #planned>.top:hover, #undone>.content:hover{
+    overflow-y: auto !important;
+}
+
+#planned>.top, #undone>.content{
+    overflow-y: hidden !important;
+}
+
+#planned, #undone {
+    padding: 0 15px;
+    width: 44%;
+    height: 100%;
+    float: left;
+}
+
+.sidebar{
+    overflow-y: hidden !important;
+    width: 12%;
+    height: 100%;
+    float: left;
+    background: #d4d4d4;
+    padding: 15px;
+}
+
+.sidebar>.btn{
+    margin: 5px 0;
+}
+
+.table>tbody>tr.active>td{
+    background: #afafaf !important;
+}
+
+#undone>.content{
+    height: calc(100% - 56px);
+}
+
+#planned>.top{
+    height: calc(100% - 34px - 56px);
+}
+
+#planned>.bottom{
+    height: 34px;
+}
+
+.btnMachine .active{
+    background: gray;
+}
+
+.processJob{
+    background: #ddd;
+}

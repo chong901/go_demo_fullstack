@@ -1,0 +1,41 @@
+{{template "header" .}}
+<link rel="stylesheet" href="/static/css/arrangeJob.css?{{template "version"}}">
+<script src="/static/js/arrangeJob.js?{{template "version"}}"></script>
+<div class="sidebar">
+    {{range .machines}}
+    <button data-machine-id="{{.Id}}" class="btn btn-default col-xs-12 btnMachine">{{.Name}}</button>
+    {{end}}
+</div>
+<div id="planned">
+    <div class="title">
+        <h3>{{translate "tPlannedJob" .lang}}</h3>
+    </div>
+    <div class="top">
+    </div>
+    <div class="bottom text-right">
+        <button class="btn btn-primary btnSave">{{translate "tSave" .lang}}</button>
+    </div>
+</div>
+<div id="undone">
+    <div class="title">
+        <h3>{{translate "tUnplannedJob" .lang}}</h3>
+    </div>
+    <div class="content">
+    </div>
+</div>
+<div style="display: none;">
+    <table align="center" class="table hiddenTable">
+        <thead>
+        <tr>
+            <th>{{translate "tJob" .lang}} ID</th>
+            <th>{{translate "tSku" .lang}}</th>
+            <th>{{translate "tQuantity" .lang}}</th>
+            <th>{{translate "tFinishedQty" .lang}}</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody class="sortable">
+        </tbody>
+    </table>
+</div>
+{{template "footer"}}

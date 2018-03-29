@@ -1,0 +1,51 @@
+{{template "header" .}}
+<script>
+    btnId = 'navBtnJob';
+</script>
+<script src="/static/js/jobMEdit.js?{{template "version"}}"></script>
+<div class="dataDiv">
+    <div id="dataTable">
+        <form id="form" method="POST" action="/jobM/save">
+            <div class="form-group">
+                <label>{{translate "tJob" .lang}} ID</label>
+                {{if .data.Id}}
+                <input class="form-control" data-minlength="5" required name="id" readonly value="{{.data.Id}}">
+                <input type="hidden" name="idRuleId" value="{{.data.IdRuleId}}">
+                {{else}}
+                <select id="idRuleSelect" class="form-control" name="idRuleId" onchange="showExample()" required>
+                    <option value=""></option>
+                    {{range $.idRuleList}}
+                    <option value="{{.Id}}">{{.Name}}</option>
+                    {{end}}
+                </select>
+                <span id="example"></span>
+                {{end}}
+            </div>
+            <div class="form-group">
+                <label for="sku">{{translate "tPartNo" .lang}}</label>
+                <select id="sku" class="form-control" name="skuId">
+                    <option></option>
+                    {{range .skus}}
+                    <option value="{{.Id}}" {{if eq .Id $.data.SkuId}} selected {{end}}>{{.Id}}</option>
+                    {{end}}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="quantity">{{translate "tQty" .lang}}</label>
+                <input id="quantity" class="form-control" name="quantity" type="number" value="{{.data.Quantity}}">
+            </div>
+            <div class="form-group">
+                <label for="lot">{{translate "tBatch" .lang}}</label>
+                <input id="lot" class="form-control" name="lot" value="{{.data.Lot}}">
+            </div>
+            <div class="form-group">
+                <label>{{translate "tCreated" .lang}}: {{dateTime24 .data.CreatedAt}}</label>
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="{{translate "tSave" .lang}}">
+                <input type="button" class="btn btn-primary" value="{{translate "tBack" .lang}}" onclick="redirect('/jobM')">
+            </div>
+        </form>
+    </div>
+</div>
+{{template "footer"}}

@@ -1,0 +1,37 @@
+{{template "header" .}}
+<script src="/static/js/machineMEdit.js?{{template "version"}}"></script>
+<script>
+    btnId = 'navBtnJob';
+</script>
+<div class="dataDiv">
+    <div id="dataTable">
+        <form id="form" method="POST" action="/machineM/save">
+            <div class="form-group">
+                <label for="name">{{translate "tName" .lang}}</label>
+                <input id="name" class="form-control" name="name" type="text" value="{{.data.Name}}">
+            </div>
+            <div class="form-group">
+                <label for="type">{{translate "tType" .lang}}</label>
+                <input id="type" class="form-control" name="type" type="text" value="{{.data.Type}}">
+            </div>
+            <div class="form-group">
+                <label for="department">{{translate "tDepartment" .lang}}</label>
+                <input id="department" class="form-control" name="department" type="text"
+                       value="{{.data.Department}}">
+            </div>
+            <div class="form-group">
+                <label for="ip">{{translate "tIPAddress" .lang}}</label>
+                <input id="ip" class="form-control" name="ipAddress" value="{{.data.IpAddress}}">
+            </div>
+            <div class="form-group">
+                <label>{{translate "tCreated" .lang}}: {{dateTime24 .data.CreatedAt}}</label>
+            </div>
+            <div class="form-group">
+                <input id="machineId" type="hidden" name="id" value="{{.data.Id}}">
+                <input type="submit" class="btn btn-primary" value="{{translate "tSave" .lang}}">
+                <input type="button" class="btn btn-primary" value="{{translate "tBack" .lang}}" onclick="redirect('/machineM')">
+            </div>
+        </form>
+    </div>
+</div>
+{{template "footer"}}

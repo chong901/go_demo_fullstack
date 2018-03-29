@@ -1,0 +1,53 @@
+{{template "header" .}}
+<script src="/static/js/socket-io-1.3.7.js?{{template "version"}}"></script>
+<script src="/static/js/functionList.js?{{template "version"}}"></script>
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+<div class="dataDiv">
+    <table id="dataTable" class="table" align="center">
+        <thead>
+        <tr>
+            <th class="strGroup">{{translate "tGroup" .lang}}</th>
+            <th class="strName">{{translate "tName" .lang}}</th>
+            <th class="strURI">{{translate "tURI" .lang}}</th>
+            <th class="strMethod">{{translate "tMethod" .lang}}</th>
+            <th class="strIsMenu">{{translate "tIsMenu" .lang}}</th>
+            <th class="strOrder">{{translate "tOrder" .lang}}</th>
+            <th></th>
+        </tr>
+        </thead>
+        {{if .data}}
+        {{range .data}}
+        <tr>
+            <td class="parentName">{{if .ParentFunc}}{{.ParentFunc.Name}}{{end}}</td>
+            <td class="name">{{.Name}}</td>
+            <td class="uri">{{.Uri}}</td>
+            <td class="method">{{.Method}}</td>
+            <td class="isMenu">{{if .IsMenu}}T{{else}}F{{end}}</td>
+            <td class="orderNum">{{.OrderNum}}</td>
+            <td>
+                <input class="btn btn-primary updateBtn" type="button" value="{{translate "tEdit" $.lang}}"
+                       onclick="editFunction('edit', this, '{{.Id}}')">
+                <input class="parent" type="hidden" value="{{.Parent}}">
+                <input class="btn btn-danger" type="button" value="{{translate "tDelete" $.lang}}"
+                       onclick="remove(this, '/function', 'id', '{{.Id}}')">
+            </td>
+        </tr>
+        {{end}}
+        {{else}}
+        <tr id="emptyTr">
+            <td class="text-center emptyTd"><h2>{{translate "tOrder" .lang}}</h2></td>
+        </tr>
+        {{end}}
+    </table>
+    <div class="text-center">
+        <input class="btn btn-primary" type="button" value="{{translate "tAdd" .lang}}" onclick="editFunction('add', this)">
+    </div>
+</div>
+<div class="hid">
+    <span id="strParent">{{translate "tParent" .lang}}</span>
+    <span id="strYes">{{translate "tYes" .lang}}</span>
+    <span id="strNo">{{translate "tNo" .lang}}</span>
+</div>
+{{template "footer"}}

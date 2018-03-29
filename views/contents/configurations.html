@@ -1,0 +1,34 @@
+{{template "header" .}}
+<script src="/static/js/configuration.js?{{template "version"}}"></script>
+<div class="dataDiv">
+    <div>
+        <h3>{{translate .title .lang}}</h3>
+    </div>
+    <table id="configTable" class="table">
+        <thead>
+        <tr>
+            <th class="strName">{{translate "tName" .lang}}</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {{if not .data}}
+        <tr id="emptyTr">
+            <td colspan="2" class="text-center"><h4>{{translate "tNoData" .lang}}</h4></td>
+        </tr>
+        {{else}}
+        {{range .data}}
+        <tr>
+            <td>{{.Name}}</td>
+            <td><input class="btn btn-danger" type="button" value="{{translate "tDelete" $.lang}}"
+                       onclick="remove(this, '/configuration', 'id', '{{.Id}}')"></td>
+        </tr>
+        {{end}}
+        {{end}}
+        </tbody>
+    </table>
+    <div class="text-center">
+        <input class="btn btn-primary" type="button" value="{{translate "tAdd" .lang}}" onclick="addConfig('{{.type}}')">
+    </div>
+</div>
+{{template "footer"}}

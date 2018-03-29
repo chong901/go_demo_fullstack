@@ -1,0 +1,10 @@
+{{template "header" .}}
+<div class="text-center">
+    <h3>
+        {{translate .message .lang}}
+    </h3>
+</div>
+<div class="text-center">
+    <input class="btn btn-primary" type="button" value="{{translate "tBack" .lang}}" onclick="window.history.back()">
+</div>
+{{template "footer"}}

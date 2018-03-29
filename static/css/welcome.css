@@ -1,0 +1,99 @@
+/* colors from http://www.creepyed.com/2012/09/windows-8-colors-hex-code/ */
+/* color alpha calculator at https://www.hexcolortool.com/ */
+
+body {
+	font-family: 'Open Sans', "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+	font-size: 14px;;
+	line-height: 1.5em;
+	font-weight: 400;
+}
+
+p, span, a, ul, li, button {
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	line-height: inherit;
+}
+
+.info-a {
+    color: white !important;
+}
+
+strong {
+	font-weight: 600;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Open Sans', "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+	line-height: 1.5em;
+	font-weight: 300;	
+}
+
+strong {
+    font-weight: 400;
+}
+
+.tile {
+    width: 100%;
+    display: inline-block;
+    box-sizing: border-box;
+	background: #fff;		
+	padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+}
+    
+.tile > .title {
+    margin-top: 0px;
+}
+
+.tile.blue, .tile.red, .tile.orange, .tile.green {
+    color: #fff;
+}
+
+.tile.red {
+    background: #ac193d;
+}
+.tile.red:hover {
+    background: #930024;
+}
+  
+.tile.green {
+    background: #00a600;
+}
+.tile.green:hover {
+    background: #008d00;
+}
+  
+.tile.blue {
+    background: #2672ec;
+}
+.tile.blue:hover {
+    background: #0d59d3;
+}
+
+.tile.orange {
+    background: #dc572e;
+}
+.tile.orange:hover {
+    background: #c33e15;
+}	
+
+.tile.grey {
+    background: #cdcdcd;
+}
+.tile.grey:hover {
+    background: #b3b3b3;
+}
+
+.mInfo-left, .jInfo-left {
+    float: left;
+}
+
+.mInfo-right, .jInfo-right {
+    float: right;
+}
+
+.progress {
+    margin: 1px;
+}

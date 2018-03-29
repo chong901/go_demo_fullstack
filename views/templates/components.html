@@ -1,0 +1,14 @@
+{{define "filterButtons"}}
+<button id="btnFilterSearch" type="button" class="btn btn-default">
+    <span class="glyphicon glyphicon-search"></span> {{translate "tSearch" .lang}}
+</button>
+<button id="btnFilterReset" class="btn btn-default">{{translate "tClear" .lang}}</button>
+{{end}}
+{{define "dateIntervalInputs"}}
+<input id="searchStartDate" class="form-control" name="startDate" type="date" value="{{date .filter.StartDate}}">
+<span>~</span>
+<input id="searchEndDate" class="form-control" name="endDate" type="date" value="{{date .filter.EndDate}}">
+<div class="hid">
+    <span id="strTimeError">{{translate "tTimeError" .lang}}</span>
+</div>
+{{end}}

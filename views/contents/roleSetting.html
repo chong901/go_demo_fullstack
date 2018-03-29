@@ -1,0 +1,52 @@
+{{template "header" .}}
+<link rel="stylesheet" type="text/css" href="/static/css/role.css?{{template "version"}}">
+<script src="/static/js/role.js?{{template "version"}}"></script>
+<div class="topBtnsDiv">
+    <select id="roleSelect" class="form-control">
+    </select>
+    <input class="btn btn-primary" type="button" name="" value="{{translate "tAddRole" .lang}}" onclick="editRole('add')">
+    <input class="btn btn-primary" type="button" name="" value="{{translate "tEditRoleName" .lang}}" onclick="editRole()">
+    <input class="btn btn-danger" type="button" name="" value="{{translate "tDeleteRole" .lang}}" onclick="deleteRole()">
+</div>
+<div class="dataDiv">
+    <table id="dataTable" class="table" align="center">
+        <thead>
+        <tr>
+            <th>{{translate "tFunction" .lang}}</th>
+            <th>{{translate "tParent" .lang}}</th>
+            <th>{{translate "tURI" .lang}}</th>
+            <th>{{translate "tMethod" .lang}}</th>
+            <th>{{translate "tIsMenu" .lang}}</th>
+            <th>
+                <input id="checkAll" type="checkbox" onclick="checkAll(this)">
+            </th>
+        </tr>
+        </thead>
+        <tbody id="functionData">
+        {{if .data}}
+        {{range .data}}
+        <tr class="parent_{{.Parent}}">
+            <td>{{.Name}}</td>
+            <td>{{if .ParentFunc}}{{.ParentFunc.Name}}{{end}}</td>
+            <td>{{.Uri}}</td>
+            <td>{{.Method}}</td>
+            <td>{{if .IsMenu}}T{{else}}F{{end}}</td>
+            <td><input type="checkbox" name="functions" value="{{.Id}}" onclick="checkFunc(this, '{{.Id}}')"></td>
+        </tr>
+        {{end}}
+        {{else}}
+        <tr id="emptyTr">
+            <td class="text-center emptyTd"><h2>{{translate "tNoData" .lang}}</h2></td>
+        </tr>
+        {{end}}
+        </tbody>
+    </table>
+    <div class="text-center">
+        <input class="btn btn-primary" type="button" name="" value="{{translate "tUpdatePrivilege" .lang}}" onclick="saveFunctions()">
+    </div>
+</div>
+<div class="hid">
+    <span id="strRole">{{translate "tRole" .lang}}</span>
+    <span id="strName">{{translate "tName" .lang}}</span>
+</div>
+{{template "footer"}}

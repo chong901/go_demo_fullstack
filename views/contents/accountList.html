@@ -1,0 +1,53 @@
+{{template "header" .}}
+<script src="/static/js/account.js?{{template "version"}}"></script>
+<div class="topBtnsDiv">
+    <input class="btn btn-primary btnAddAccount" type="button" value="{{translate "tAddAccount" .lang}}" onclick="userDialog(this, 'add')">
+</div>
+<div class="dataDiv">
+    <table id="dataTable" class="table" align="center">
+        <thead>
+        <tr>
+            <th>{{translate "tUsername" .lang}}</th>
+            <th class="roleStr">{{translate "tRole" .lang}}</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {{if .data}}
+        {{range .data}}
+        <tr>
+            <td class="account">{{.Account}}</td>
+            <td class="roleName">{{.Role.Name}}</td>
+            <td>
+                <input class="roleId" type="hidden" value="{{.RoleId}}">
+                <input class="btn btn-primary btnEditRole" type="button" value="{{translate "tEditRole" $.lang}}" onclick="openDialog(this)">
+                <input class="btn btn-primary btnEditPassword" type="button" value="{{translate "tEditPassword" $.lang}}" onclick="userDialog(this, 'edit')">
+            </td>
+        </tr>
+        {{end}}
+        {{else}}
+        <tr id="emptyTr">
+            <td class="text-center emptyTd"><h3>{{translate "tNoData" .lang}}</h3></td>
+        </tr>
+        {{end}}
+        </tbody>
+    </table>
+</div>
+<div class="hid">
+    <table>
+        <tr>
+            <td class="account"></td>
+            <td class="roleName"></td>
+            <td>
+                <input class="roleId" type="hidden" value="">
+                <input class="btn btn-primary btnEditRole" type="button" value="{{translate "tEditRole" $.lang}}" onclick="openDialog(this)">
+                <input class="btn btn-primary btnEditPassword" type="button" value="{{translate "tEditPassword" $.lang}}" onclick="userDialog(this, 'edit')">
+            </td>
+        </tr>
+    </table>
+    <span id="strAccountAdded">{{translate "tAccountAdded" .lang}}</span>
+    <span id="strPwdChanged">{{translate "tPwdChanged" .lang}}</span>
+    <span id="strPassword">{{translate "tPassword" .lang}}</span>
+    <span id="strAccount">{{translate "tAccount" .lang}}</span>
+</div>
+{{template "footer"}}

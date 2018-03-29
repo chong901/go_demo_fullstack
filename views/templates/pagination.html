@@ -1,0 +1,37 @@
+{{define "pagination"}}
+<nav>
+    <ul class="pagination">
+    {{if lt $.pg.Previous 1}}
+        <li class="page-item disabled">
+            <span class="page-link">Previous</span>
+        </li>
+    {{else}}
+        <li class="page-item">
+            <a class="page-link" data-page="{{$.pg.Previous}}" href="#">Previous</a>
+        </li>
+    {{end}}
+    {{range getPageLi $.pg}}
+    {{if eq . $.pg.Current}}
+        <li class="page-item active">
+                  <span class="page-link">
+                    {{.}}
+                        <span class="sr-only">(current)</span>
+                  </span>
+        </li>
+    {{else}}
+        <li class="page-item"><a class="page-link" data-page="{{.}}" href="#">{{.}}</a></li>
+    {{end}}
+    {{end}}
+
+    {{if gt $.pg.Next $.pg.Total}}
+        <li class="page-item disabled">
+            <span class="page-link">Next</span>
+        </li>
+    {{else}}
+        <li class="page-item">
+            <a class="page-link" data-page="{{$.pg.Next}}" href="#">Next</a>
+        </li>
+    {{end}}
+    </ul>
+</nav>
+{{end}}

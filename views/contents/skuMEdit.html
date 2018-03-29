@@ -1,0 +1,82 @@
+{{template "header" .}}
+<script src="/static/js/skuMEdit.js?{{template "version"}}"></script>
+<link rel="stylesheet" type="text/css" href="/static/css/skuMEdit.css?{{template "version"}}">
+<script>
+    btnId = 'navBtnProduce';
+</script>
+<div class="dataDiv">
+    <div id="dataTable">
+        <form id="form" method="POST" action="/skuM/save" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="skuId">{{translate "tPartNo" .lang}}:</label>
+                <input id="skuId" class="form-control" name="id" value="{{.data.Id}}" {{if .data.Id }} readonly {{end}} required>
+            </div>
+            <div class="form-group">
+                <label for="skuCt">{{translate "tPartCt" .lang}}:</label>
+                <input id="skuCt" type="number" step="0.01" min="1.00" class="form-control" name="ct" value="{{.data.Ct}}" required>
+            </div>
+            <div class="form-group">
+                <label for="skuUnitMeasure">{{translate "tPerUnitMeasure" .lang}}:</label>
+                <input id="skuUnitMeasure" type="number" step="0.01" min="1.00" class="form-control" name="perUnitMeasure" value="{{.data.PerUnitMeasure}}" required>
+            </div>
+            <div class="form-group">
+                <label for="skuUnit">{{translate "tPartUnit" .lang}}</label>
+                <select id="skuUnit" class="form-control" name="unit">
+                    <option></option>
+                    {{range .units}}
+                    <option value="{{.Name}}" {{if eq .Name $.data.Unit}} selected {{end}}>{{.Name}}</option>
+                    {{end}}
+                </select>
+            </div>
+            <div class="form-group">
+                <label>{{translate "tParameters" .lang}}</label><br>
+                <div id="condTable" class="table">
+                    <div class="tr">
+                        <span class="td condKey"><label>{{translate "tLabel" .lang}}</label></span>
+                        <span class="td condVal"><label>{{translate "tValue" .lang}}</label></span>
+                    </div>
+                    {{range $parm := .data.Parameters}}
+                    <div class="tr dataRow paramsTr">
+                        <input type="hidden" class="id" value="{{.Id}}">
+                        <span class="td">
+                            <select class="form-control tdInput pKey">
+                              {{range $.paramConfig}}
+                              <option value="{{.Name}}" {{if eq $parm.Key .Name}} selected {{end}}>{{.Name}}</option>
+                              {{end}}
+                            </select>
+                        </span>
+                        <span class="td"><input class="form-control tdInput pValue" value="{{.Value}}"></span>
+                        <span class="td"><input type="button" class="btn btn-danger condBtnRm" value="{{translate "tDelete" $.lang}}"
+                                                onclick="removeFromEditPage(this, '/skuParameter', '{{.Id}}')"></span>
+                    </div>
+                    {{end}}
+                </div>
+                <div>
+                    <input type="button" class="btn btn-primary" value="{{translate "tAddParameter" .lang}}" onclick="addCond()">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="gsFile">{{translate "tGoldenSample" .lang}}</label>
+                <input id="gsFile" type="file" name="gsFile">
+                {{if .data.GsUri}}
+                <br>File: <a href="{{.data.GsUri}}">{{.data.GsUri}}</a>
+                {{end}}
+            </div>
+            <div class="form-group">
+                <label for="sopFile">{{translate "tSOP" .lang}}</label>
+                <input id="sopFile" type="file" name="sopFile">
+                {{if .data.SopUri}}
+                <br>File: <a href="{{.data.SopUri}}">{{.data.SopUri}}</a>
+                {{end}}
+            </div>
+            <div class="form-group">
+                <label>{{translate "tLastEdit" .lang}}: {{dateTime24 .data.UpdatedAt}}</label>
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="{{translate "tSave" .lang}}">
+                <a href="/skuM" class="btn btn-primary">{{translate "tBack" .lang}}</a>
+            </div>
+        </form>
+    </div>
+</div>
+{{template "footer"}}

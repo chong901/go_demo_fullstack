@@ -1,0 +1,33 @@
+{{template "header" .}}
+<div class="dataDiv">
+    <table id="dataTable" class="table" align="center">
+        <thead>
+        <tr>
+            <th>{{translate "tName" .lang}}</th>
+            <th>{{translate "tExample" .lang}}</th>
+            <th></th>
+        </tr>
+        </thead>
+        {{if .data}}
+        {{range .data}}
+        <tr>
+            <td class="name">{{.Name}}</td>
+            <td class="example">{{.Example}}</td>
+
+            <td>
+                <a class="btn btn-primary" href="{{$.editUrl}}?id={{.Id}}">{{translate "tEdit" $.lang}}</a>
+                <button class="btn btn-danger" onclick="remove(this, '{{$.editUrl}}', 'id', '{{.Id}}')">{{translate "tDelete" $.lang}}</button>
+            </td>
+        </tr>
+        {{end}}
+        {{else}}
+        <tr id="emptyTr">
+            <td class="text-center emptyTd"><h2>{{translate "tNoData" .lang}}</h2></td>
+        </tr>
+        {{end}}
+    </table>
+    <div style="text-align: center;">
+        <a class="btn btn-primary" href="{{.editUrl}}">{{translate "tAdd" .lang}}</a>
+    </div>
+</div>
+{{template "footer"}}

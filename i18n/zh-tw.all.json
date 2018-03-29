@@ -1,0 +1,314 @@
+{
+  "tAccount": {
+    "other": "帳號"
+  },
+  "tAccountAdded": {
+    "other": "帳號已新增"
+  },
+  "tActivity": {
+    "other": "動作"
+  },
+  "tAdd": {
+    "other": "新增"
+  },
+  "tAddAccount": {
+    "other": "新增帳號"
+  },
+  "tAddJob": {
+    "other": "新增工作"
+  },
+  "tAddMachine": {
+    "other": "新增機台"
+  },
+  "tAddParameter": {
+    "other": "新增參數"
+  },
+  "tAddRole": {
+    "other": "新增角色"
+  },
+  "tBack": {
+    "other": "返回"
+  },
+  "tBatch": {
+    "other": "批號"
+  },
+  "tCalculatedInventory": {
+    "other": "計算後儲量"
+  },
+  "tCancel": {
+    "other": "取消"
+  },
+  "tClear": {
+    "other": "清除"
+  },
+  "tClientNo": {
+    "other": "客戶編號"
+  },
+  "tConfirm": {
+    "other": "確認"
+  },
+  "tCreated": {
+    "other": "建立時間"
+  },
+  "tCreatedAt": {
+    "other": "建立時間"
+  },
+  "tCurrent": {
+    "other": "已產出"
+  },
+  "tCurrentInventory": {
+    "other": "當下儲量"
+  },
+  "tDate": {
+    "other": "是否添加日期"
+  },
+  "tDelete": {
+    "other": "刪除"
+  },
+  "tDeleteMsg": {
+    "other": "是否確定要刪除？"
+  },
+  "tDeleteMsgNotReversed": {
+    "other": "此操作無法復原，是否確定要刪除？"
+  },
+  "tDeleteRole": {
+    "other": "刪除角色"
+  },
+  "tDeleted": {
+    "other": "已刪除"
+  },
+  "tDeliveryDate": {
+    "other": "交期"
+  },
+  "tDepartment": {
+    "other": "部門"
+  },
+  "tDigitNumber": {
+    "other": "計數位數"
+  },
+  "tEdit": {
+    "other": "編輯"
+  },
+  "tEditPassword": {
+    "other": "修改密碼"
+  },
+  "tEditRole": {
+    "other": "編輯角色"
+  },
+  "tEditRoleName": {
+    "other": "編輯角色名稱"
+  },
+  "tEditor": {
+    "other": "編輯人員"
+  },
+  "tExample": {
+    "other": "範例"
+  },
+  "tFinishedQty": {
+    "other": "已完成數量"
+  },
+  "tFulfillmentSummary": {
+    "other": "完成進度"
+  },
+  "tFunction": {
+    "other": "功能"
+  },
+  "tGoldenSample": {
+    "other": "Golden Sample"
+  },
+  "tGroup": {
+    "other": "組"
+  },
+  "tHistory": {
+    "other": "歷史"
+  },
+  "tIPAddress": {
+    "other": "IP Address"
+  },
+  "tInternalServerError": {
+    "other": "系統異常，請聯繫系統管理員。"
+  },
+  "tInventoryLevel": {
+    "other": "庫存量"
+  },
+  "tIsMenu": {
+    "other": "是否為選單"
+  },
+  "tJob": {
+    "other": "工作"
+  },
+  "tLabel": {
+    "other": "標籤"
+  },
+  "tLastEdit": {
+    "other": "最後編輯人員"
+  },
+  "tLastUpdated": {
+    "other": "最後更新時間"
+  },
+  "tLogin": {
+    "other": "登入"
+  },
+  "tMachineID": {
+    "other": "機台 ID"
+  },
+  "tMachineStatus": {
+    "other": "機台狀態"
+  },
+  "tManufacturingOperationsManagementService": {
+    "other": "生產作業管理服務"
+  },
+  "tMethod": {
+    "other": "Method"
+  },
+  "tName": {
+    "other": "名稱"
+  },
+  "tNo": {
+    "other": "否"
+  },
+  "tNoData": {
+    "other": "尚無資料!"
+  },
+  "tNoJob": {
+    "other": "無工作"
+  },
+  "tOperator": {
+    "other": "操作員"
+  },
+  "tOrder": {
+    "other": "順序"
+  },
+  "tPONo": {
+    "other": "訂單編號"
+  },
+  "tPageNotFound": {
+    "other": "無此網頁。"
+  },
+  "tParameters": {
+    "other": "參數"
+  },
+  "tParent": {
+    "other": "父功能"
+  },
+  "tPartCt": {
+    "other": "生產速度"
+  },
+  "tPartNo": {
+    "other": "零件編號"
+  },
+  "tPartUnit": {
+    "other": "單位"
+  },
+  "tParts": {
+    "other": "零件"
+  },
+  "tPassword": {
+    "other": "密碼"
+  },
+  "tPerUnitMeasure": {
+    "other": "單位計量"
+  },
+  "tPlan": {
+    "other": "計畫產出"
+  },
+  "tPlannedJob": {
+    "other": "已計劃工作"
+  },
+  "tPrefix": {
+    "other": "前綴詞"
+  },
+  "tPrompt": {
+    "other": "提示"
+  },
+  "tPwdChanged": {
+    "other": "密碼已修改"
+  },
+  "tQty": {
+    "other": "數量"
+  },
+  "tQuantity": {
+    "other": "數量"
+  },
+  "tReportOutput": {
+    "other": "報工"
+  },
+  "tReportedOutput": {
+    "other": "已報工數量"
+  },
+  "tRole": {
+    "other": "角色"
+  },
+  "tSOP": {
+    "other": "SOP"
+  },
+  "tSave": {
+    "other": "儲存"
+  },
+  "tSaved": {
+    "other": "已存檔"
+  },
+  "tSearch": {
+    "other": "搜尋"
+  },
+  "tSku": {
+    "other": "Sku"
+  },
+  "tSkuParameter": {
+    "other": "Sku 參數"
+  },
+  "tStation": {
+    "other": "工站編號"
+  },
+  "tStatus": {
+    "other": "狀態"
+  },
+  "tStock": {
+    "other": "入庫"
+  },
+  "tTime": {
+    "other": "時間"
+  },
+  "tTimeError": {
+    "other": "起始時間須小於結束時間。"
+  },
+  "tType": {
+    "other": "型別"
+  },
+  "tURI": {
+    "other": "URI"
+  },
+  "tUnauthorized": {
+    "other": "無此權限。"
+  },
+  "tUnit": {
+    "other": "單位"
+  },
+  "tUnitSetting": {
+    "other": "單位設定"
+  },
+  "tUnplannedJob": {
+    "other": "尚未計畫工作"
+  },
+  "tUpdatePrivilege": {
+    "other": "更新權限"
+  },
+  "tUsername": {
+    "other": "使用者名稱"
+  },
+  "tValue": {
+    "other": "內容"
+  },
+  "tWithdraw": {
+    "other": "取貨"
+  },
+  "tYes": {
+    "other": "是"
+  },
+  "tEditQty": {
+    "other": "修改數量"
+  },
+  "tRemaining": {
+    "other": "剩餘"
+  }
+}

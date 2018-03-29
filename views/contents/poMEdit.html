@@ -1,0 +1,70 @@
+{{template "header" .}}
+<script src="/static/js/poMEdit.js?{{template "version"}}"></script>
+<link rel="stylesheet" type="text/css" href="/static/css/poMEdit.css?{{template "version"}}">
+<script>
+    btnId = 'navBtnPo';
+</script>
+<div class="dataDiv">
+    <div id="dataTable">
+        <form id="form" method="POST" action="/poM/save">
+            <div class="form-group">
+                <label for="poId">{{translate "tPONo" .lang}}:</label>
+                <input id="poId" class="form-control" name="id" required {{if .data.Id}} readonly {{end}}
+                       value="{{.data.Id}}">
+            </div>
+            <div class="form-group">
+                <label for="clientId">{{translate "tClientNo" .lang}}</label>
+                <input id="clientId" class="form-control" name="clientId" value="{{.data.ClientId}}">
+            </div>
+            <div class="form-group">
+                <div id="skuTable" class="table">
+                    <div class="tr">
+                        <span class="td"><label>{{translate "tPartNo" .lang}}</label></span>
+                        <span class="td"><label>{{translate "tQty" .lang}}</label></span>
+                        <span class="td"><label>{{translate "tUnit" .lang}}</label></span>
+                    </div>
+                    {{range $index, $data := .data.SkuList}}
+                    <div class="tr dataRow">
+                        <input class="id" type="hidden" value="{{.Id}}">
+                        <span class="td">
+                            <select class="form-control trSelect tdInput skuId">
+                              <option value=""></option>
+                              {{range $.skus}}
+                                  <option value="{{.Id}}" {{if eq $data.SkuId .Id}} selected {{end}}>{{.Id}}</option>
+                              {{end}}
+                            </select>
+                        </span>
+                        <span class="td">
+                            <input type="number" class="form-control tdInput quantity" value="{{.Quantity}}">
+                        </span>
+                        <span class="td">
+                            <select class="form-control trSelect tdInput unit">
+                              <option></option>
+                              {{range $.units}}
+                              <option value="{{.Name}}" {{if eq $data.Unit .Name}} selected {{end}}>{{.Name}}</option>
+                              {{end}}
+                            </select>
+                        </span>
+                        <span class="td">
+                            <input type="button" class="btn btn-danger" value="{{translate "tDelete" .lang}}" onclick="removeFromEditPage(this, '/poSku', '{{.Id}}')">
+                        </span>
+                    </div>
+                    {{end}}
+                </div>
+                <input type="button" id="test" class="btn btn-primary" value="{{translate "tAdd" .lang}}" onclick="addSku(this)">
+            </div>
+            <div class="form-group">
+                <label for="due">{{translate "tDeliveryDate" .lang}}</label>
+                <input id="due" class="form-control" name="due" type="date" value="{{date .data.Due}}" required>
+            </div>
+            <div class="form-group">
+                <label>{{translate "tCreated" .lang}}: {{dateTime24 .data.CreatedAt}}</label>
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="{{translate "tSave" .lang}}">
+                <input type="button" class="btn btn-primary" value="{{translate "tBack" .lang}}" onclick="redirect('/poM')">
+            </div>
+        </form>
+    </div>
+</div>
+{{template "footer"}}

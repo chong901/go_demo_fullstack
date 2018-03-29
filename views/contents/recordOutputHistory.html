@@ -1,0 +1,57 @@
+{{template "header" .}}
+<link rel="stylesheet" type="text/css" href="/static/css/inventoryHistory.css">
+<script src="/static/js/socket-io-1.3.7.js"></script>
+<script src="/static/js/recordOutputHistory.js"></script>
+<script>
+    btnId = 'navBtnROutputHist';
+</script>
+<div class="divMainInfo">
+    <h3>{{translate "tJob" .lang}}: {{.job}}</h3>
+    <h3>{{translate "tReportedOutput" .lang}}: {{.totalQty}}</h3>
+    <br>
+    <h4>{{translate "tHistory" .lang}}: </h4>
+</div>
+<div class="dataDiv">
+    <table id="dataTable" class="table" align="center">
+        <thead>
+        <tr>
+            <th>{{translate "tQty" .lang}}</th>
+            <th>{{translate "tEditor" .lang}}</th>
+            <th>{{translate "tTime" .lang}}</th>
+            <th></th>
+        </tr>
+        </thead>
+        {{if .data}}
+        {{range .data}}
+        <tr>
+            <td data-recordid="{{.Id}}" class="qty">{{.Quantity}}</td>
+            <td class="editor">{{.User}}</td>
+            <td>{{dateTime24 .UpdatedAt}}</td>
+            <td>
+                <input type="button" class="btn btn-primary btnUpdate" value="{{translate "tEdit" $.lang}}" 
+                    onclick="editQty(this, '{{.Id}}')">
+                <button class="btn btn-danger" onclick="remove(this, '/reportOutput', 'id', '{{.Id}}')">{{translate "tDelete" $.lang}}</button>
+            </td>
+        </tr>
+        {{end}}
+        <tr>
+            <td><input class="btn btn-primary" type="button" value="{{translate "tBack" .lang}}" onclick="redirect('/reportOutput')"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        {{else}}
+        <tr id="emptyTr">
+            <td class="text-center emptyTd"><h2>{{translate "tNoData" .lang}}</h2></td>
+        </tr>
+        <tr>
+            <td><input class="btn btn-primary" type="button" value="{{translate "tBack" .lang}}" onclick="redirect('/reportOutput')"></td>
+        </tr>
+        {{end}}
+    </table>
+</div>
+<div class="hid">
+    <span id="strEditQty">{{translate "tEditQty" .lang}}</span>
+    <span id="strQuantity">{{translate "tQuantity" .lang}}</span>
+</div>
+{{template "footer"}}

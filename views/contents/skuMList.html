@@ -1,0 +1,68 @@
+{{template "header" .}}
+<script src="/static/js/skuM.js?{{template "version"}}"></script>
+<script>
+    btnId = 'navBtnProduce';
+</script>
+<div class="dataDiv">
+    <div class="divFilterForm">
+        <form id="filterForm" class="form-inline">
+            <div class="form-group">
+                <input id="id" name="id" class="form-control" type="text" placeholder="{{translate "tPartNo" .lang}}" value="{{.filter.Id}}">
+            {{template "filterButtons" .}}
+            </div>
+        </form>
+        <a href="/skuM/save" class="btn btn-primary addSku">{{translate "tAdd" .lang}}</a>
+    </div>
+    <table id="dataTable" class="table" align="center">
+        <thead>
+        <tr>
+            <th>{{translate "tPartNo" .lang}}</th>
+            <th>{{translate "tPartCt" .lang}}</th>
+            <th>{{translate "tPerUnitMeasure" .lang}}</th>
+            <th>{{translate "tPartUnit" .lang}}</th>
+            <th>{{translate "tParameters" .lang}}</th>
+            <th>{{translate "tGoldenSample" .lang}}</th>
+            <th>{{translate "tSOP" .lang}}</th>
+            <th>{{translate "tEditor" .lang}}</th>
+            <th>{{translate "tLastEdit" .lang}}</th>
+            <th></th>
+        </tr>
+        </thead>
+        {{if .data}}
+        {{range $d := .data}}
+        <tr>
+            <td>{{.Id}}</td>
+            <td>{{.Ct}}</td>
+            <td>{{.PerUnitMeasure}}</td>
+            <td>{{.Unit}}</td>
+            <td>
+                {{range $k, $v := .Parameters}}
+                {{if $v.Key}}
+                {{$v.Key}}: {{$v.Value}}
+                {{if not (last $k $d.Parameters)}}
+                <br>
+                {{end}}
+                {{end}}
+                {{end}}
+            </td>
+            <td style="overflow:hidden"><a href="{{.GsUri}}">{{.GsUri}}</a></td>
+            <td><a href="{{.SopUri}}">{{.SopUri}}</a></td>
+            <td>{{.User}}</td>
+            <td>{{dateTime24 .UpdatedAt}}</td>
+            <td>
+                <a class="btn btn-primary" href="/skuM/save?id={{.Id}}">{{translate "tEdit" $.lang}}</a>
+                <button class="btn btn-danger" onclick="remove(this, '/skuM', 'id', '{{.Id}}')">{{translate "tDelete" $.lang}}</button>
+            </td>
+        </tr>
+        {{end}}
+        {{else}}
+        <tr id="emptyTr">
+            <td class="text-center emptyTd"><h2>{{translate "tNoData" .lang}}</h2></td>
+        </tr>
+        {{end}}
+    </table>
+    {{if .data}}
+         {{template "pagination" .}}
+    {{end}}
+</div>
+{{template "footer"}}

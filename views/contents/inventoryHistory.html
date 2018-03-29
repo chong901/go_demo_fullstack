@@ -1,0 +1,50 @@
+{{template "header" .}}
+<link rel="stylesheet" type="text/css" href="/static/css/inventoryHistory.css?{{template "version"}}">
+<script>
+    btnId = 'navBtnInventory';
+</script>
+<div class="divMainInfo">
+    <h3>{{translate "tPartNo" .lang}}: {{.data.SkuId}}</h3>
+    <h3>{{translate "tCurrentInventory" .lang}}: {{.data.Level}}</h3>
+    <br>
+    <h4>{{translate "tHistory" .lang}}: </h4>
+</div>
+<div class="dataDiv">
+    <table id="dataTable" class="table" align="center">
+        <thead>
+        <tr>
+            <th>{{translate "tActivity" .lang}}</th>
+            <th>{{translate "tQty" .lang}}</th>
+            <th>{{translate "tEditor" .lang}}</th>
+            <th>{{translate "tTime" .lang}}</th>
+            <th>{{translate "tCalculatedInventory" .lang}}</th>
+        </tr>
+        </thead>
+        {{if .data.History}}
+        {{range .data.History}}
+        <tr>
+            <td>{{translate (actionName .Action) $.lang}}</td>
+            <td>{{.Amount}}</td>
+            <td>{{.User}}</td>
+            <td>{{dateTime24 .UpdatedAt}}</td>
+            <td>{{.CurrentLevel}}</td>
+        </tr>
+        {{end}}
+        <tr>
+            <td><input class="btn btn-primary" type="button" value="{{translate "tBack" .lang}}" onclick="redirect('/inventory')"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        {{else}}
+        <tr id="emptyTr">
+            <td class="text-center emptyTd"><h2>{{translate "tNoData" .lang}}</h2></td>
+        </tr>
+        <tr>
+            <td><input class="btn btn-primary" type="button" value="{{translate "tBack" .lang}}" onclick="redirect('/inventory')"></td>
+        </tr>
+        {{end}}
+    </table>
+</div>
+{{template "footer"}}

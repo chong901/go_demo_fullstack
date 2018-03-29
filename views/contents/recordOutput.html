@@ -1,0 +1,56 @@
+{{template "header" .}}
+<script src="/static/js/socket-io-1.3.7.js"></script>
+<script src="/static/js/recordOutput.js?{{template "version"}}"></script>
+<script>
+    btnId = 'navBtnRecordOutput';
+</script>
+<div class="dataDiv">
+        <div class="divFilterForm">
+            <form id="filterForm" class="form-inline">
+                <div class="form-group">
+                    <input id="job" name="job" class="form-control" type="text" placeholder="{{translate "tJob" .lang}}" value="{{.filter.Job}}">
+                    <input id="sku" name="sku" class="form-control" type="text" placeholder="{{translate "tPartNo" .lang}}" value="{{.filter.Sku}}">
+                    {{template "filterButtons" .}}
+                </div>
+            </form>
+        </div>
+    <table id="dataTable" class="table" align="center">
+        <thead>
+        <tr>
+            <th>{{translate "tJob" .lang}}</th>
+            <th>{{translate "tPartNo" .lang}}</th>
+            <th>{{translate "tQty" .lang}}</th>
+            <th>{{translate "tReportedOutput" .lang}}</th>
+            <th></th>
+        </tr>
+        </thead>
+        {{if .data}}
+        {{range .data}}
+        <tr>
+            <td data-jobId="{{.Job}}">{{.Job}}</td>
+            <td class="skuId">{{.Sku}}</td>
+            <td class="planned">{{.Planned}}</td>
+            <td class="reportedOutput">{{.Quantity}}</td>
+            <td>
+                <input type="button" class="btn btn-primary btnUpdate" value="{{translate "tReportOutput" $.lang}}"
+                       onclick="reportOutput(this, '{{.Job}}')">
+                <input type="button" class="btn btn-default" value="{{translate "tHistory" $.lang}}"
+                       onclick="redirect('/reportOutput/history?id={{.Job}}')">
+            </td>
+        </tr>
+        {{end}}
+        {{else}}
+        <tr id="emptyTr">
+            <td class="text-center emptyTd"><h2>{{translate "tNoData" .lang}}</h2></td>
+        </tr>
+        {{end}}
+    </table>
+    {{if .data}}
+        {{template "pagination" .}}
+    {{end}}
+</div>
+<div class="hid">
+    <span id="strReportOutput">{{translate "tReportOutput" .lang}}</span>
+    <span id="strQuantity">{{translate "tQuantity" .lang}}</span>
+</div>
+{{template "footer"}}

@@ -1,0 +1,314 @@
+{
+  "tAccount": {
+    "other": "Account"
+  },
+  "tAccountAdded": {
+    "other": "Account added."
+  },
+  "tActivity": {
+    "other": "Activity"
+  },
+  "tAdd": {
+    "other": "Add"
+  },
+  "tAddAccount": {
+    "other": "Add Account"
+  },
+  "tAddJob": {
+    "other": "Add Job"
+  },
+  "tAddMachine": {
+    "other": "Add Machine"
+  },
+  "tAddParameter": {
+    "other": "Add Parameter"
+  },
+  "tAddRole": {
+    "other": "Add Role"
+  },
+  "tBack": {
+    "other": "Back"
+  },
+  "tBatch": {
+    "other": "Batch"
+  },
+  "tCalculatedInventory": {
+    "other": "Calculated Inventory"
+  },
+  "tCancel": {
+    "other": "Cancel"
+  },
+  "tClear": {
+    "other": "Clear"
+  },
+  "tClientNo": {
+    "other": "Client No."
+  },
+  "tConfirm": {
+    "other": "Confirm"
+  },
+  "tCreated": {
+    "other": "Created"
+  },
+  "tCreatedAt": {
+    "other": "Created At"
+  },
+  "tCurrent": {
+    "other": "Current"
+  },
+  "tCurrentInventory": {
+    "other": "Current Inventory"
+  },
+  "tDate": {
+    "other": "Date"
+  },
+  "tDelete": {
+    "other": "Delete"
+  },
+  "tDeleteMsg": {
+    "other": "Are you sure you want to delete?"
+  },
+  "tDeleteMsgNotReversed": {
+    "other": "This action cannot be reversed. Are you sure you want to delete?"
+  },
+  "tDeleteRole": {
+    "other": "Delete Role"
+  },
+  "tDeleted": {
+    "other": "Deleted"
+  },
+  "tDeliveryDate": {
+    "other": "Delivery Date"
+  },
+  "tDepartment": {
+    "other": "Department"
+  },
+  "tDigitNumber": {
+    "other": "Digit Number"
+  },
+  "tEdit": {
+    "other": "Edit"
+  },
+  "tEditPassword": {
+    "other": "Edit Password"
+  },
+  "tEditRole": {
+    "other": "Edit Role"
+  },
+  "tEditRoleName": {
+    "other": "Edit Role Name"
+  },
+  "tEditor": {
+    "other": "Editor"
+  },
+  "tExample": {
+    "other": "Example"
+  },
+  "tFinishedQty": {
+    "other": "Finished Qty"
+  },
+  "tFulfillmentSummary": {
+    "other": "Fulfillment Summary"
+  },
+  "tFunction": {
+    "other": "Function"
+  },
+  "tGoldenSample": {
+    "other": "Golden Sample"
+  },
+  "tGroup": {
+    "other": "Group"
+  },
+  "tHistory": {
+    "other": "History"
+  },
+  "tIPAddress": {
+    "other": "IP Address"
+  },
+  "tInternalServerError": {
+    "other": "Internal server error contact your system administrator"
+  },
+  "tInventoryLevel": {
+    "other": "Inventory Level"
+  },
+  "tIsMenu": {
+    "other": "Is Menu"
+  },
+  "tJob": {
+    "other": "Job"
+  },
+  "tLabel": {
+    "other": "Label"
+  },
+  "tLastEdit": {
+    "other": "Last Edit"
+  },
+  "tLastUpdated": {
+    "other": "Last Updated"
+  },
+  "tLogin": {
+    "other": "Log in"
+  },
+  "tMachineID": {
+    "other": "Machine ID"
+  },
+  "tMachineStatus": {
+    "other": "Machine Status"
+  },
+  "tManufacturingOperationsManagementService": {
+    "other": "Manufacturing Operations Management Service"
+  },
+  "tMethod": {
+    "other": "Method"
+  },
+  "tName": {
+    "other": "Name"
+  },
+  "tNo": {
+    "other": "No"
+  },
+  "tNoData": {
+    "other": "NO DATA!"
+  },
+  "tNoJob": {
+    "other": "NO JOB"
+  },
+  "tOperator": {
+    "other": "Operator"
+  },
+  "tOrder": {
+    "other": "Order"
+  },
+  "tPONo": {
+    "other": "PO No."
+  },
+  "tPageNotFound": {
+    "other": "Page Not Found"
+  },
+  "tParameters": {
+    "other": "Parameters"
+  },
+  "tParent": {
+    "other": "Parent"
+  },
+  "tPartCt": {
+    "other": "CT"
+  },
+  "tPartNo": {
+    "other": "Part No."
+  },
+  "tPartUnit": {
+    "other": "Unit"
+  },
+  "tParts": {
+    "other": "Parts"
+  },
+  "tPassword": {
+    "other": "Password"
+  },
+  "tPerUnitMeasure": {
+    "other": "Unit Measure"
+  },
+  "tPlan": {
+    "other": "Plan"
+  },
+  "tPlannedJob": {
+    "other": "Planned Job"
+  },
+  "tPrefix": {
+    "other": "Prefix"
+  },
+  "tPrompt": {
+    "other": "Prompt"
+  },
+  "tPwdChanged": {
+    "other": "Password changed."
+  },
+  "tQty": {
+    "other": "Qty"
+  },
+  "tQuantity": {
+    "other": "Quantity"
+  },
+  "tReportOutput": {
+    "other": "Report Output"
+  },
+  "tReportedOutput": {
+    "other": "Reported Output"
+  },
+  "tRole": {
+    "other": "Role"
+  },
+  "tSOP": {
+    "other": "SOP"
+  },
+  "tSave": {
+    "other": "Save"
+  },
+  "tSaved": {
+    "other": "Saved"
+  },
+  "tSearch": {
+    "other": "Search"
+  },
+  "tSku": {
+    "other": "Sku"
+  },
+  "tSkuParameter": {
+    "other": "Sku Parameter"
+  },
+  "tStation": {
+    "other": "Station"
+  },
+  "tStatus": {
+    "other": "Status"
+  },
+  "tStock": {
+    "other": "Stock"
+  },
+  "tTime": {
+    "other": "Time"
+  },
+  "tTimeError": {
+    "other": "Start time must be less then end time."
+  },
+  "tType": {
+    "other": "Type"
+  },
+  "tURI": {
+    "other": "URI"
+  },
+  "tUnauthorized": {
+    "other": "Unauthorized"
+  },
+  "tUnit": {
+    "other": "Unit"
+  },
+  "tUnitSetting": {
+    "other": "Unit Setting"
+  },
+  "tUnplannedJob": {
+    "other": "Unplanned Job"
+  },
+  "tUpdatePrivilege": {
+    "other": "Update Privilege"
+  },
+  "tUsername": {
+    "other": "Username"
+  },
+  "tValue": {
+    "other": "Value"
+  },
+  "tWithdraw": {
+    "other": "Withdraw"
+  },
+  "tYes": {
+    "other": "Yes"
+  },
+  "tEditQty": {
+    "other": "Edit Quantity"
+  },
+  "tRemaining": {
+    "other": "Remaining"
+  }
+}

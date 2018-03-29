@@ -1,0 +1,9 @@
+[server]
+    port = ":8080"
+[database]
+    driveName = "mysql"  
+    host = "localhost"  
+    port = 5400  
+    account = "account"  
+    password = "password"  
+    databaseName = "demo" 

@@ -1,0 +1,58 @@
+{{template "header" .}}
+<script src="/static/js/socket-io-1.3.7.js"></script>
+<script src="/static/js/jobM.js?{{template "version"}}"></script>
+<script>
+    btnId = 'navBtnJob';
+</script>
+<div class="dataDiv">
+    <div class="divFilterForm">
+        <form id="filterForm" class="form-inline">
+            <div class="form-group">
+                <input id="id" name="id" class="form-control" type="text" placeholder="{{translate "tJob" .lang}} ID" value="{{.filter.Id}}">
+                <input id="skuId" name="skuId" class="form-control" type="text" placeholder="{{translate "tPartNo" .lang}}" value="{{.filter.SkuId}}">
+                <input id="lot" name="lot" class="form-control" type="text" placeholder="{{translate "tBatch" .lang}}" value="{{.filter.Lot}}">
+                <label>{{translate "tCreatedAt" .lang}}</label>
+                {{template "dateIntervalInputs" .}}
+                {{template "filterButtons" .}}
+            </div>
+        </form>
+        <a class="btn btn-primary" href="/jobM/save">{{translate "tAdd" .lang}}</a>
+    </div>
+    <table id="dataTable" class="table" align="center">
+        <thead>
+        <tr>
+            <th>{{translate "tJob" .lang}} ID</th>
+            <th>{{translate "tPartNo" .lang}}</th>
+            <th>{{translate "tQty" .lang}}</th>
+            <th>{{translate "tBatch" .lang}}</th>
+            <th>{{translate "tStation" .lang}}</th>
+            <th>{{translate "tCreated" .lang}}</th>
+            <th></th>
+        </tr>
+        </thead>
+        {{if .data}}
+        {{range .data}}
+        <tr>
+            <td data-id="{{.Id}}">{{.Id}}</td>
+            <td class="skuId">{{.SkuId}}</td>
+            <td class="quantity">{{.Quantity}}</td>
+            <td class="lot">{{.Lot}}</td>
+            <td class="stationId">{{.Machine.Name}}</td>
+            <td class="createAt">{{dateTime24 .CreatedAt}}</td>
+            <td>
+                <a class="btn btn-primary" href="/jobM/save?id={{.Id}}">{{translate "tEdit" $.lang}}</a>
+                <button class="btn btn-danger" onclick="remove(this, '/jobM', 'id', '{{.Id}}')">{{translate "tDelete" $.lang}}</button>
+            </td>
+        </tr>
+        {{end}}
+        {{else}}
+        <tr id="emptyTr">
+            <td class="text-center emptyTd"><h2>{{translate "tNoData" .lang}}</h2></td>
+        </tr>
+        {{end}}
+    </table>
+    {{if .data}}
+         {{template "pagination" .}}
+    {{end}}
+</div>
+{{template "footer"}}

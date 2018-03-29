@@ -1,0 +1,37 @@
+{{template "header" .}}
+<script src="/static/js/idRuleEdit.js?{{template "version"}}"></script>
+<div class="dataDiv">
+    <div id="dataTable">
+        <form id="form" method="POST" action="/idRule">
+
+            <div class="form-group">
+                <label>{{translate "tName" .lang}}</label>
+                <input class="form-control" name="name" value="{{.data.Name}}">
+            </div>
+            <div class="form-group">
+                <label>{{translate "tPrefix" .lang}}</label>
+                <input class="form-control" name="prefix" value="{{.data.Prefix}}" onchange="showExample()">
+            </div>
+            <div class="form-group">
+                <label>{{translate "tDigitNumber" .lang}}</label>
+                <input class="form-control" type="number" min="1" name="digitNumber" value="{{if .data.DigitNumber}}{{.data.DigitNumber}}{{else}}1{{end}}" onchange="showExample()">
+            </div>
+            <div class="form-group">
+                <label>{{translate "tDate" .lang}}</label><br>
+                <label class="radio-inline"><input name="isDateShow" type="radio" value="1" {{if .data.IsDateShow}}checked{{end}} onchange="showExample()">{{translate "tYes" .lang}}</label>
+                <label class="radio-inline"><input name="isDateShow" type="radio" value="0" {{if not .data.IsDateShow}}checked{{end}} onchange="showExample()">{{translate "tNo" .lang}}</label>
+            </div>
+
+            <div>
+                <label>{{translate "tExample" .lang}}: <span id="example"></span></label>
+            </div>
+            <div class="form-group">
+                <input id="id" type="hidden" name="id" value="{{.data.Id}}">
+                <input type="hidden" name="category" value="{{.data.Category}}">
+                <input type="submit" class="btn btn-primary" value="{{translate "tSave" .lang}}">
+                <input type="button" class="btn btn-primary" value="{{translate "tBack" .lang}}" onclick="redirect('{{.backUrl}}')">
+            </div>
+        </form>
+    </div>
+</div>
+{{template "footer"}}
