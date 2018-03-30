@@ -56,8 +56,6 @@ func main() {
 	r.NoRoute(controllers.ErrorHandler404)
 	routers.SetRoutes(r)
 
-	r.StaticFile("favicon.ico", "static/img/mosi_favicon.png")
-
 	r.Run(config.Server.Port)
 }
 

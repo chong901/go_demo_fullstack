@@ -26,12 +26,6 @@
   vertical-align: middle;
 }
 
-.helper{
-  display: inline-block;
-  height: 100%;
-  vertical-align: middle;
-}
-
 .navbar-brand>img{
   display: inline-block !important;
   vertical-align: middle;
@@ -81,4 +75,10 @@ body{
 
 .divFilterForm>form{
   display: inline-block !important;
+}
+
+.home{
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
 }
